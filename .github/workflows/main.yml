@@ -1,10 +1,10 @@
-
 name: Build Eden-NS2 for Windows
 
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -25,20 +25,19 @@ jobs:
           msystem: MINGW64
           update: true
           install: >-
-  git
-  patch
-  autotools
-  mingw-w64-x86_64-toolchain
-  mingw-w64-x86_64-cmake
-  mingw-w64-x86_64-ninja
-  mingw-w64-x86_64-qt6
-  mingw-w64-x86_64-ffmpeg
-  mingw-w64-x86_64-sdl3
-  mingw-w64-x86_64-boost
-  mingw-w64-x86_64-openssl
-  mingw-w64-x86_64-vulkan-headers
+            git
+            patch
+            autotools
+            mingw-w64-x86_64-toolchain
+            mingw-w64-x86_64-cmake
+            mingw-w64-x86_64-ninja
+            mingw-w64-x86_64-qt6
+            mingw-w64-x86_64-ffmpeg
+            mingw-w64-x86_64-sdl3
+            mingw-w64-x86_64-boost
+            mingw-w64-x86_64-openssl
+            mingw-w64-x86_64-vulkan-headers
 
-     
       - name: Configure
         shell: msys2 {0}
         run: |
